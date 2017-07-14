@@ -96,6 +96,11 @@ function hookFetchCode () {
 
   hookFetch()
 }
-if (typeof chrome !== 'undefined') {
+
+function isFirefox() {
+  return /Firefox/.test(navigator.userAgent)
+}
+
+if (!isFirefox()) {
   hookFetchCode()
 }
